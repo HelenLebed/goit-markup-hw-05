@@ -12,6 +12,8 @@
     --border-color: #eeeeee;
     --bold-font: 500;
     --transparent-black: rgba(255, 255, 255, 0.1);
+    --transition-time: 250ms;
+    --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -65,8 +67,19 @@ address {
     clip-path: inset(50%);
     margin: -1px;
 }
-.menu-link.curent {
+.menu-link.current {
     color: var(--main-logo-color);
+    position: relative;
+}
+.current::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--main-logo-color);
 }
 .page-header-logo {
     font-family: "Raleway", sans-serif;
@@ -89,6 +102,9 @@ address {
     display: inline-block;
     padding-top: 32px;
     padding-bottom: 32px;
+    transition-property: background-color, color;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
 }
 .menu-contact {
     font-weight: var(--bold-font);
@@ -101,6 +117,9 @@ address {
     display: flex;
     align-items: center;
     fill: currentColor;
+    transition-property: background-color, color;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
 }
 .menu-contact svg {
     margin-right: 10px;
@@ -135,6 +154,9 @@ address {
     width: 216px;
     height: 50px;
     border-radius: 4px;
+    transition-property: background-color, color;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
 }
 
 .modal-open-btn:hover,
@@ -222,6 +244,8 @@ address {
     background-color: var(--secondary-font-color);
     color: var(--icon-svg-color);
     fill: currentColor;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
 }
 .social-list-link:hover,
 .social-list-link:focus {
@@ -281,10 +305,13 @@ address {
     color: var(--primary-font-color);
     min-width: 73px;
     padding: 6px 22px;
+    transition-property: background-color, color, box-shadow;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
 }
 .portfolio-select-list button:hover,
 .portfolio-select-list button:focus {
-    background: var(--main-logo-color);
+    background-color: var(--main-logo-color);
     color: var(--secondary-font-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
         0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -417,6 +444,9 @@ address {
     border-radius: 4px;
     color: var(--icon-svg-color);
     fill: currentColor;
+    transition-property: background-color, color, box-shadow;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
 }
 .regular-clients-link:hover,
 .regular-clients-link:focus {
@@ -462,6 +492,9 @@ address {
 }
 .portfolio-example-link {
     display: block;
+    transition-property: box-shadow;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
 }
 .portfolio-example-link:hover,
 .portfolio-example-link:focus {
@@ -501,6 +534,9 @@ address {
     background: var(--transparent-black);
     color: var(--secondary-font-color);
     fill: currentColor;
+    transition-property: background-color, color, box-shadow;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
 }
 .footer-social-list-link:hover,
 .footer-social-list-link:focus {
