@@ -14,6 +14,8 @@
     --transparent-black: rgba(255, 255, 255, 0.1);
     --transition-time: 250ms;
     --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --bg-image-overlay: rgba(47, 48, 58, 0.8);
+    --bg-portfolio-overlay: rgba(33, 150, 243, 0.9);
 }
 
 body {
@@ -141,7 +143,7 @@ address {
     margin-right: auto;
 }
 .modal-open-btn {
-    background: var(--main-logo-color);
+    background-color: var(--main-logo-color);
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
@@ -154,6 +156,7 @@ address {
     width: 216px;
     height: 50px;
     border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     transition-property: background-color, color;
     transition-duration: var(--transition-time);
     transition-timing-function: var(--transition-function);
@@ -256,10 +259,7 @@ address {
     width: 20px;
     height: 20px;
 }
-/* .social-list-link:hover .social-list-icon, */
-/* .social-list-link:focus .social-list-icon { */
-/* fill: var(--secondary-font-color); */
-/* } */
+
 .bottom {
     background: var(--order-background-color);
     padding-top: 60px;
@@ -410,9 +410,29 @@ address {
 .propositions-section {
     padding-bottom: 94px;
 }
+.propositions-items {
+    position: relative;
+}
+
 .propositions-list {
     display: flex;
     justify-content: space-between;
+}
+.propositions-items > .image-overlay {
+    position: absolute;
+    background-color: var(--bg-image-overlay);
+    bottom: 0px;
+    overflow: hidden;
+    width: 370px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    line-height: 1.14;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--secondary-font-color);
 }
 .our-team-list {
     display: flex;
@@ -487,11 +507,13 @@ address {
     flex-wrap: wrap;
     gap: 30px;
 }
+
 .portfolio-example-item {
     width: calc((100% - 2 * 30px) / 3);
 }
 .portfolio-example-link {
     display: block;
+
     transition-property: box-shadow;
     transition-duration: var(--transition-time);
     transition-timing-function: var(--transition-function);
@@ -501,7 +523,34 @@ address {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
         1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-
+/* _______________________________________________________________________________________________________________________ */
+.portfolio-overlay-wrapper .portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    font-size: 18px;
+    line-height: 1.56;
+    color: var(--secondary-font-color);
+    padding-top: 63px;
+    padding-left: 24px;
+    padding-right: 24px;
+    overflow: auto;
+    background-color: var(--bg-portfolio-overlay);
+    transition-property: transform;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
+}
+.portfolio-example-link:hover .portfolio-overlay-wrapper .portfolio-overlay,
+.portfolio-example-link:focus .portfolio-overlay-wrapper .portfolio-overlay {
+    transform: translateY(0%);
+}
+.portfolio-overlay-wrapper {
+    position: relative;
+    overflow: hidden;
+}
 .portfolio-example-wrap {
     padding: 20px 24px;
     border-right: 1px solid var(--border-color);
