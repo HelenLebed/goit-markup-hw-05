@@ -107,7 +107,7 @@ address {
     display: inline-block;
     padding-top: 32px;
     padding-bottom: 32px;
-    transition-property: background-color, color;
+    transition-property: color;
     transition-duration: var(--transition-time);
     transition-timing-function: var(--transition-function);
 }
@@ -122,7 +122,7 @@ address {
     display: flex;
     align-items: center;
     fill: currentColor;
-    transition-property: background-color, color;
+    transition-property: color;
     transition-duration: var(--transition-time);
     transition-timing-function: var(--transition-function);
 }
@@ -160,7 +160,7 @@ address {
     height: 50px;
     border-radius: 4px;
     box-shadow: 0px 4px 4px var(--btn-box-shadow-color);
-    transition-property: background-color, color;
+    transition-property: background-color;
     transition-duration: var(--transition-time);
     transition-timing-function: var(--transition-function);
 }
@@ -250,6 +250,7 @@ address {
     background-color: var(--secondary-font-color);
     color: var(--icon-svg-color);
     fill: currentColor;
+    transition-property: background-color, color;
     transition-duration: var(--transition-time);
     transition-timing-function: var(--transition-function);
 }
@@ -280,6 +281,9 @@ address {
     font-style: normal;
     line-height: 1.7;
     color: var(--secondary-font-color);
+    transition-property: color;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
 }
 .bottom-address-tel-mail {
     font-style: normal;
@@ -327,7 +331,7 @@ address {
     color: var(--primary-font-color);
 }
 
-.portfolio-example-list p {
+.portfolio-example-text {
     font-size: 16px;
     line-height: 1.9;
     color: var(--alternative-font-color);
@@ -467,7 +471,7 @@ address {
     border-radius: 4px;
     color: var(--icon-svg-color);
     fill: currentColor;
-    transition-property: background-color, color, box-shadow;
+    transition-property: border-color, color;
     transition-duration: var(--transition-time);
     transition-timing-function: var(--transition-function);
 }
@@ -540,7 +544,8 @@ address {
     padding-top: 63px;
     padding-left: 24px;
     padding-right: 24px;
-    overflow: auto;
+    padding-bottom: 24px;
+    overflow: scroll;
     background-color: var(--bg-portfolio-overlay);
     transition-property: transform;
     transition-duration: var(--transition-time);
@@ -586,7 +591,7 @@ address {
     background: var(--transparent-black);
     color: var(--secondary-font-color);
     fill: currentColor;
-    transition-property: background-color, color, box-shadow;
+    transition-property: background-color;
     transition-duration: var(--transition-time);
     transition-timing-function: var(--transition-function);
 }
